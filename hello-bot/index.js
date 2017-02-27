@@ -26,4 +26,9 @@ module.exports = function(bp) {
         console.log('>> SVP pas la LICRA');
         bp.messenger.sendText(event.user.id, "Allons allons, est-on obligé de parler de ça ?");
     })
+
+    bp.hear({'wit.entities.intent[0].value': 'salutation'}, (event, next) => {
+        console.log('>> Bonjour');
+        bp.messenger.sendText(event.user.id, "Yo yo yo !");
+    })
 }
